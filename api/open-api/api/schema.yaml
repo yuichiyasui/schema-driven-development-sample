@@ -46,6 +46,8 @@ components:
         price:
           type: integer
           format: int32
+        imageUrl:
+          type: string
       required:
         - id
         - name
