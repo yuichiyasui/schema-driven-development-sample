@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Open API Sample
+  version: 1.0.0
+servers:
+  - url: localhost:4001
+paths:
+  /items:
+    get:
+      summary: 商品リストを取得する
+      tags:
+        - item
+      operationId: listItems
+      parameters:
+        - name: limit
+          in: query
+          description: 1度に取得する最大件数
+          required: false
+          schema:
+            type: integer
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description: 商品一覧を返す
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        default:
+          description: エラー
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: integer
+          format: int32
+      required:
+        - id
+        - name
+        - price
+        - imageUrl
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+      required:
+        - code
+        - message
