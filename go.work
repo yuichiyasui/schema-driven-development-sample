@@ -1,0 +1,4 @@
+go 1.20
+
+use ./api/graphql
+use ./api/open-api
