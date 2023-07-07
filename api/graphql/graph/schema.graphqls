@@ -1,0 +1,18 @@
+type Item {
+  "商品ID"
+  id: ID!
+  "商品名"
+  name: String!
+  "価格"
+  price: Int!
+  "商品画像URL"
+  imageUrl: String!
+}
+
+type Query {
+  "商品一覧"
+  items(
+    "1度に取得する最大件数"
+    limit: Int
+  ): [Item!]!
+}

@@ -1,0 +1,7 @@
+## スキーマの更新手順
+`api/graphql/graph/schema.graphqls`にスキーマを定義する
+
+スキーマをベースにgoファイルを生成する
+```bash
+go run github.com/99designs/gqlgen generate
+```
