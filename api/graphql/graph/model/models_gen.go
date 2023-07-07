@@ -2,6 +2,7 @@
 
 package model
 
+// 商品
 type Item struct {
 	// 商品ID
 	ID string `json:"id"`

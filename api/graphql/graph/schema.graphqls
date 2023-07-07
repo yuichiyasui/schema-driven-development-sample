@@ -1,3 +1,4 @@
+"商品"
 type Item {
   "商品ID"
   id: ID!
