@@ -1,0 +1,15 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gen:open-api": "openapi-typescript ../api/open-api/schema.yaml -o ./__generated__/open-api/schema.d.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "openapi-typescript": "^6.2.9"
+  }
+}
