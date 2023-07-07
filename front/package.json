@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "gen:open-api": "openapi-typescript ../api/open-api/schema.yaml -o ./__generated__/open-api/schema.d.ts"
+    "gen:open-api": "openapi-typescript ../api/open-api/schema.yaml -o ./__generated__/open-api/schema.d.ts",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "openapi-typescript": "^6.2.9"
+    "@graphql-codegen/cli": "4.0.1",
+    "openapi-typescript": "^6.2.9",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "graphql": "^16.7.1"
   }
 }
