@@ -1,32 +1,27 @@
 "use client";
 
 import { operations } from "@/__generated__/open-api/schema";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { ItemCard } from "../_components/ItemCard";
-import { Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-
-const queryClient = new QueryClient({
-  defaultOptions: { queries: { suspense: true } },
-});
+import { QueryClientProvider } from "@/libs/tanstack-query/client";
 
 // type ListItemRequest = operations["listItems"]["parameters"]["query"];
 type ListItemResponse =
   operations["listItems"]["responses"][keyof operations["listItems"]["responses"]]["content"]["application/json"];
 
 const ItemList = () => {
-  const { data } = useQuery<ListItemResponse>({
+  const { data, isFetching } = useQuery<ListItemResponse>({
     queryKey: ["items"],
     queryFn: () =>
       fetch("http://localhost:4001/items").then((data) => data.json()),
   });
 
+  if (!data && isFetching) {
+    return <p>Loading...</p>;
+  }
+
   if (!data || !Array.isArray(data)) {
-    throw new Error("Fetch Error!");
+    return <p>Fetching Error!</p>;
   }
 
   return (
@@ -44,14 +39,9 @@ const ItemList = () => {
 
 export default function Page() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider>
       <h1 className="text-3xl mb-10">Open API</h1>
-
-      <ErrorBoundary fallback={<p>Fetch Error!</p>}>
-        <Suspense fallback={<p>Loading...</p>}>
-          <ItemList />
-        </Suspense>
-      </ErrorBoundary>
+      <ItemList />
     </QueryClientProvider>
   );
 }

@@ -3,6 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@apollo/client': 3.8.0-beta.6
   '@apollo/experimental-nextjs-app-support': ^0.3.2
+  '@bufbuild/connect': ^0.11.0
+  '@bufbuild/connect-web': ^0.11.0
+  '@bufbuild/protobuf': ^1.2.1
+  '@bufbuild/protoc-gen-connect-web': ^0.11.0
+  '@bufbuild/protoc-gen-es': ^1.2.1
   '@graphql-codegen/cli': ^4.0.1
   '@graphql-codegen/client-preset': ^4.0.1
   '@graphql-typed-document-node/core': ^3.2.0
@@ -26,6 +31,9 @@ specifiers:
   typescript: 5.1.6
 
 dependencies:
+  '@bufbuild/connect': 0.11.0_@bufbuild+protobuf@1.2.1
+  '@bufbuild/connect-web': 0.11.0_@bufbuild+protobuf@1.2.1
+  '@bufbuild/protobuf': 1.2.1
   '@graphql-typed-document-node/core': 3.2.0_graphql@16.7.1
   '@tanstack/react-query': 4.29.19_biqbaboplfbrettd7655fr4n2y
   '@types/node': 20.4.1
@@ -46,6 +54,8 @@ dependencies:
 devDependencies:
   '@apollo/client': 3.8.0-beta.6_5ztug3kkjzdoe5zdptj2lue3qa
   '@apollo/experimental-nextjs-app-support': 0.3.2_fvsoghgnwwvwtyl5up26y3kbna
+  '@bufbuild/protoc-gen-connect-web': 0.11.0_utpinohjqgjgvixcyfah4f7kyu
+  '@bufbuild/protoc-gen-es': 1.2.1_@bufbuild+protobuf@1.2.1
   '@graphql-codegen/cli': 4.0.1_qedojxaxjtm2cu3vck5mk7djpy
   '@graphql-codegen/client-preset': 4.0.1_graphql@16.7.1
   eslint-config-prettier: 8.8.0_eslint@8.44.0
@@ -725,6 +735,73 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
+    dev: true
+
+  /@bufbuild/connect-web/0.11.0_@bufbuild+protobuf@1.2.1:
+    resolution: {integrity: sha512-H0tSsn7dMJY5EQNHoQyE/TXmmRtJ6GauRl9RWk4GncQCXulo5ab5yn8cEtu7UKnPCvF7nYbK1ESE0vHi5Y2xaw==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^1.2.1
+    dependencies:
+      '@bufbuild/connect': 0.11.0_@bufbuild+protobuf@1.2.1
+      '@bufbuild/protobuf': 1.2.1
+    dev: false
+
+  /@bufbuild/connect/0.11.0_@bufbuild+protobuf@1.2.1:
+    resolution: {integrity: sha512-a6hrNtBzDzj4hpqylPqpJfMpIP4+O/SnszGgOuRzcuifpTvkwjSmVHLtcvkUYh0wpvjYB0CFmTYzrvAMOftbHw==}
+    peerDependencies:
+      '@bufbuild/protobuf': ^1.2.1
+    dependencies:
+      '@bufbuild/protobuf': 1.2.1
+
+  /@bufbuild/protobuf/1.2.1:
+    resolution: {integrity: sha512-cwwGvLGqvoaOZmoP5+i4v/rbW+rHkguvTehuZyM2p/xpmaNSdT2h3B7kHw33aiffv35t1XrYHIkdJSEkSEMJuA==}
+
+  /@bufbuild/protoc-gen-connect-web/0.11.0_utpinohjqgjgvixcyfah4f7kyu:
+    resolution: {integrity: sha512-7GvYkQjN6LP/ixtosI4JBN8eph2kS5XNju9zFwBuJ6aHqfl1sNRkRWG8LEdtTJtyW2R3QypAUyLfpLQf/ZyRVw==}
+    engines: {node: '>=16.0.0'}
+    deprecated: This package is no longer supported. Please switch to use https://www.npmjs.com/package/@bufbuild/protoc-gen-connect-es. Details for switching can be found at https://github.com/bufbuild/connect-es/discussions/647
+    hasBin: true
+    peerDependencies:
+      '@bufbuild/connect': 0.11.0
+      '@bufbuild/protoc-gen-es': ^1.2.1
+    peerDependenciesMeta:
+      '@bufbuild/connect':
+        optional: true
+      '@bufbuild/protoc-gen-es':
+        optional: true
+    dependencies:
+      '@bufbuild/connect': 0.11.0_@bufbuild+protobuf@1.2.1
+      '@bufbuild/protobuf': 1.2.1
+      '@bufbuild/protoc-gen-es': 1.2.1_@bufbuild+protobuf@1.2.1
+      '@bufbuild/protoplugin': 1.2.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@bufbuild/protoc-gen-es/1.2.1_@bufbuild+protobuf@1.2.1:
+    resolution: {integrity: sha512-Nfg4ZTYciAgzqrbuGtRHR2TV4tueP10cRSD/joe57EeT0hfiXT0oQzH4OO3CzqqZvMxfkxpO4jgJgtwdQd941g==}
+    engines: {node: '>=14'}
+    hasBin: true
+    peerDependencies:
+      '@bufbuild/protobuf': 1.2.1
+    peerDependenciesMeta:
+      '@bufbuild/protobuf':
+        optional: true
+    dependencies:
+      '@bufbuild/protobuf': 1.2.1
+      '@bufbuild/protoplugin': 1.2.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@bufbuild/protoplugin/1.2.1:
+    resolution: {integrity: sha512-7VtPgJGXcOszidMpQRQK9wm8QlKqC80Uc5XR9+Ej+DN4Ur64dAW1djZ7kLZ3ij6Z9IY4FteGQT+ubUNxzcW2NA==}
+    dependencies:
+      '@bufbuild/protobuf': 1.2.1
+      '@typescript/vfs': 1.4.0
+      typescript: 4.5.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@eslint-community/eslint-utils/4.4.0_eslint@8.44.0:
@@ -1796,6 +1873,14 @@ packages:
       '@typescript-eslint/types': 5.61.0
       eslint-visitor-keys: 3.4.1
     dev: false
+
+  /@typescript/vfs/1.4.0:
+    resolution: {integrity: sha512-Pood7yv5YWMIX+yCHo176OnF8WUlKGImFG7XlsuH14Zb1YN5+dYD3uUtS7lqZtsH7tAveNUi2NzdpQCN0yRbaw==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@whatwg-node/events/0.0.3:
     resolution: {integrity: sha512-IqnKIDWfXBJkvy/k6tzskWTc2NK3LcqHlb+KHGCrjOCH4jfQckRX0NAiIcC/vIqQkzLYw2r2CTSwAxcrtcD6lA==}
@@ -5165,6 +5250,12 @@ packages:
       for-each: 0.3.3
       is-typed-array: 1.1.10
     dev: false
+
+  /typescript/4.5.2:
+    resolution: {integrity: sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
 
   /typescript/5.1.6:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}

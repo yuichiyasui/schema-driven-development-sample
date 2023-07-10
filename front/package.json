@@ -8,9 +8,13 @@
     "start": "next start",
     "lint": "next lint",
     "gen:open-api": "openapi-typescript ../api/open-api/schema.yaml -o ./src/__generated__/open-api/schema.d.ts",
-    "gen:gql": "graphql-codegen --config codegen.ts"
+    "gen:gql": "graphql-codegen --config codegen.ts",
+    "gen:grpc": "buf generate --template buf.gen.yaml ../api/grpc/"
   },
   "dependencies": {
+    "@bufbuild/connect": "^0.11.0",
+    "@bufbuild/connect-web": "^0.11.0",
+    "@bufbuild/protobuf": "^1.2.1",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@tanstack/react-query": "^4.29.19",
     "@types/node": "20.4.1",
@@ -31,6 +35,8 @@
   "devDependencies": {
     "@apollo/client": "3.8.0-beta.6",
     "@apollo/experimental-nextjs-app-support": "^0.3.2",
+    "@bufbuild/protoc-gen-connect-web": "^0.11.0",
+    "@bufbuild/protoc-gen-es": "^1.2.1",
     "@graphql-codegen/cli": "^4.0.1",
     "@graphql-codegen/client-preset": "^4.0.1",
     "eslint-config-prettier": "^8.8.0",
