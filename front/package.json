@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen:open-api": "openapi-typescript ../api/open-api/schema.yaml -o ./src/__generated__/open-api/schema.d.ts",
+    "gen:gql": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
@@ -27,6 +29,9 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^4.0.1",
     "@graphql-codegen/client-preset": "^4.0.1",
-    "openapi-typescript": "^6.3.3"
+    "eslint-config-prettier": "^8.8.0",
+    "openapi-typescript": "^6.3.3",
+    "prettier": "3.0.0",
+    "urql": "^4.0.4"
   }
 }
