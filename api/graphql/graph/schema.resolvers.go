@@ -10,11 +10,14 @@ import (
 	"graphql/graph/model"
 	"log"
 	"os"
+	"time"
 )
 
 // Items is the resolver for the items field.
 func (r *queryResolver) Items(ctx context.Context, limit *int) ([]*model.Item, error) {
-	file, err := os.ReadFile("db.json")
+	time.Sleep(1 * time.Second) // delay
+
+	file, err := os.ReadFile("../../db.json")
 	if err != nil {
 		log.Fatal("Read db.json failed.")
 	}
