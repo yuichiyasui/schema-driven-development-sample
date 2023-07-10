@@ -3,7 +3,7 @@ GraphQL APIのサンプル
 
 ## To Run
 ```bash
-go run server.go
+go run main.go
 ```
 
 ## スキーマの更新手順
