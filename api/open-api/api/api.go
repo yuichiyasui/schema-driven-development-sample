@@ -18,7 +18,7 @@ func NewApi() *Api {
 
 func (api *Api) ListItems(ctx *gin.Context, params ListItemsParams) {
 	time.Sleep(1 * time.Second) // delay
-	file, err := os.ReadFile("../../db.json")
+	file, err := os.ReadFile("../db.json")
 	if err != nil {
 		log.Fatal("Read db.json failed.")
 	}

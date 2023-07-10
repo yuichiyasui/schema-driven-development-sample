@@ -22,7 +22,7 @@ func (s *ItemServer) ListItems(
 	ctx context.Context,
 	req *connect.Request[itemv1.ListItemsRequest],
 ) (*connect.Response[itemv1.ListItemsResponse], error) {
-	file, err := os.ReadFile("../../db.json")
+	file, err := os.ReadFile("../db.json")
 	if err != nil {
 		log.Fatal("Read db.json failed.")
 	}

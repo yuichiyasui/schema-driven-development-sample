@@ -17,7 +17,7 @@ import (
 func (r *queryResolver) Items(ctx context.Context, limit *int) ([]*model.Item, error) {
 	time.Sleep(1 * time.Second) // delay
 
-	file, err := os.ReadFile("../../db.json")
+	file, err := os.ReadFile("../db.json")
 	if err != nil {
 		log.Fatal("Read db.json failed.")
 	}
