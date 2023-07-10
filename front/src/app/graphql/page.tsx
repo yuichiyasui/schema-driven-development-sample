@@ -2,9 +2,9 @@
 
 import { graphql } from "@/__generated__/graphql";
 import { useSuspenseQuery } from "@apollo/client";
-import Image from "next/image";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { ItemCard } from "../_components/ItemCard";
 
 export const dynamic = "force-dynamic";
 
@@ -26,19 +26,8 @@ const ItemList = () => {
     <ul className="flex flex-col gap-y-4">
       {data.items.map((item) => {
         return (
-          <li key={item.id} className="flex gap-x-4">
-            <Image
-              width={100}
-              height={100}
-              src={item.imageUrl}
-              alt=""
-              unoptimized
-            />
-            <div>
-              <p>{"ID: " + item.id}</p>
-              <p>{item.name}</p>
-              <p>{"¥" + item.price}</p>
-            </div>
+          <li key={item.id}>
+            <ItemCard item={item} />
           </li>
         );
       })}

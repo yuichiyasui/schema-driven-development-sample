@@ -51,7 +51,7 @@ export interface operations {
       /** @description 商品一覧を返す */
       200: {
         content: {
-          "application/json": components["schemas"]["Item"];
+          "application/json": (components["schemas"]["Item"])[];
         };
       };
       /** @description エラー */

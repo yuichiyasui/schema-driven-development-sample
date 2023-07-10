@@ -93,15 +93,15 @@ func RegisterHandlersWithOptions(router gin.IRouter, si ServerInterface, options
 // Base64 encoded, gzipped, json marshaled Swagger object
 var swaggerSpec = []string{
 
-	"H4sIAAAAAAAC/6xTTWsUQRD9K6H0OGQnG0998+BhQVAQT2EP7UztbIfpj3TXBJdlIbsLIngQolECHiXx",
-	"4+JJ/EJ/TGdCfoZ0z2yymjl48NQ1XdWv3qt6M4VMS6MVKnLApuCyMUoewzvWahsCY7VBSwLjdaZzDOdI",
-	"W8kJGAhF231IgCYGm08s0MIsAYnO8SJWt0lHVqgCZrMELO5VwmIObKfBvKofXoLpR7uYUcAaEMrrZETe",
-	"AZ6AkLzAh7bsTCousTNhrMj+Tdpf9EUOLewKZI3CdTHhuVAjHUkIKkPunkG1cfv+YOMBl6YMAPtondAK",
-	"GGxtpptpIKgNKm4EMNiOVwkYTuM4iJ4glDEqkMIRpsRJaDXIgcFd4WgQK8IbyyUSWgdsZwo5uswKQ22v",
-	"+tuJn3+sn7+qf77282O/eHb+5qB+e3r2/fP50acgLJTtVWgnK9EMSiEFQdK6J7TPccSrkoD10wQkfyxk",
-	"JYFtpWnHMIdhms5o5Zql9tO0MZoiVFEMN6YUWZTT23WB6HSt102LI2Bwo3dl5V7r4160TZz4nzrroyf1",
-	"i/nZl4OLk1O/OLz49dLPjyGWtcT/E4HmL+pg4Bfv/PK9X/6IdnKVlNxOLpn55Qe/+OqXT/3icH0ZwYy8",
-	"cNF1QdowIju0+6t9VsH2UOqMl2PtiN1K0y2YDWe/AwAA//9B9mCo6gMAAA==",
+	"H4sIAAAAAAAC/5RTTWsUTRD+K6He9zhkJ4mnvnnwsCAoiKewh3amdrbD9Eeqe4LLMpDdBRE8CNEoAY+S",
+	"+HHxJH6hP6YzIT9Dumd2s5pF9DQ1XdVPPU/V0xPItDRaoXIW2ARsNkLJY3iLSFMIDGmD5ATG40znGL5D",
+	"TZI7YCCU29mGBNzYYPuLBRLUCUi0lhexuktaR0IVUNcJEO5XgjAHtttiXtUPlmD6wR5mLmD1HcrrZES+",
+	"BjwBIXmB96lcm1Rc4tqEIZH9nbTf6IscOtgFyAqF62LCdaGGOpIQrgy5OwbVxs27/Y17XJoyABwgWaEV",
+	"MNjaTDfTQFAbVNwIYLATjxIw3I3iIHrCoYxRgS58wpS4E1r1c2BwW1jXjxXhDnGJDskC251AjjYjYVzX",
+	"q/ly6qfvm6cvmu8v/fTEz55cvDpsXp+df/14cfwhCAtl+xXSeCGaQSmkcJB07gntcxzyqnTAttMEJH8o",
+	"ZCWBbaXpmmEOwjSt0cq2S91O09ZoyqGKYrgxpciinN6eDUQnK72W0v8nHAKD/3pXnu51hu5F/9TL7pyI",
+	"j9tV/DqA5vhR82x6/unw8vTMz44ufzz30xOIZZ2if2D2J0Lt81rDwM/e+PlbP/8WfWYrKTmNl8z8/J2f",
+	"ffbzx352tLql4FJe2GjHIHUQkS3SwWLRVXgPUOqMlyNtHbuRpltQD+qfAQAA//8Da+SmAwQAAA==",
 }
 
 // GetSwagger returns the content of the embedded swagger specification file

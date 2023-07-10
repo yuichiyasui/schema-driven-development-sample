@@ -8,7 +8,12 @@ export default function Home() {
       <h2 className="text-xl mb-4">Examples</h2>
       <ul>
         <li>
-          <Link href="/graphql" className="text-blue-700">
+          <Link href="/open-api" className="text-blue-500">
+            Open API
+          </Link>
+        </li>
+        <li>
+          <Link href="/graphql" className="text-blue-500">
             GraphQL
           </Link>
         </li>

@@ -8,6 +8,8 @@ import (
 	"open-api/api"
 	"os"
 
+	myMiddleware "open-api/middleware"
+
 	middleware "github.com/deepmap/oapi-codegen/pkg/gin-middleware"
 	"github.com/gin-gonic/gin"
 )
@@ -25,6 +27,7 @@ func NewGinServer(apiInstance *api.Api, port int) *http.Server {
 
 	// This is how you set up a basic gin router
 	r := gin.Default()
+	r.Use(myMiddleware.Cors())
 
 	// Use our validation middleware to check all requests against the
 	// OpenAPI schema.

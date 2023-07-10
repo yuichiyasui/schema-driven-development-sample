@@ -21,12 +21,14 @@ paths:
             maximum: 100
             default: 20
       responses:
-        '200':
+        "200":
           description: 商品一覧を返す
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Item"
+                type: array
+                items:
+                  $ref: "#/components/schemas/Item"
         default:
           description: エラー
           content:
