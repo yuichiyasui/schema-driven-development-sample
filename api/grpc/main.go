@@ -11,6 +11,7 @@ import (
 	"os"
 
 	"github.com/bufbuild/connect-go"
+	"github.com/rs/cors"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 )
@@ -43,10 +44,12 @@ func main() {
 	mux := http.NewServeMux()
 	path, handler := itemv1connect.NewItemServiceHandler(itemServer)
 	mux.Handle(path, handler)
+	// Use h2c so we can serve HTTP/2 without TLS.
+	corsHandler := cors.Default().Handler(h2c.NewHandler(mux, &http2.Server{}))
+
 	fmt.Println("gRPC server is running: http://localhost:4003")
 	http.ListenAndServe(
 		"localhost:4003",
-		// Use h2c so we can serve HTTP/2 without TLS.
-		h2c.NewHandler(mux, &http2.Server{}),
+		corsHandler,
 	)
 }
